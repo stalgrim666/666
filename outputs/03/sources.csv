@@ -1,0 +1,50 @@
+指标,时间,值,币种,口径,URL,采集日,置信度
+收购方向,2025-05-14,Synthetix 提案收购 Derive，约 2700 万美元，27 DRV = 1 SNX,USD/DRV/SNX,SIP-415 摘要；不是 Derive 收购 Synthetix,https://sips.synthetix.io/sips/sip-415,2026-10-21,高
+收购提案撤回,2025-05-21,Synthetix 撤回 SIP-415,n/a,Synthetix 官方博客,https://blog.synthetix.io/the-withdrawal-of-the-derive-acquisition-proposal/,2026-10-21,高
+双方撤回的媒体转述,2025-05-26,The Block 称 SIP-415 与 Derive DIP 相互撤回,n/a,二手报道，方向与 SIP 一致,https://www.theblock.co/news/defi/2025-05-26-synthetix-derive-call-off-merger-355678,2026-10-21,中
+期权名义成交 MTD,2026-09-01至2026-09-25 UTC,3431478815,USD,DefiLlama Derive 母协议 dailyNotionalVolume 日合计,https://api.llama.fi/summary/options/derive?dataType=dailyNotionalVolume,2026-10-21,高
+期权名义成交整月,2026-09-01至2026-09-30 UTC,3820244128,USD,同上，完整 9 月,https://api.llama.fi/summary/options/derive?dataType=dailyNotionalVolume,2026-10-21,高
+9月21日名义成交,2026-09-21 UTC,453261663,USD,同上日值,https://api.llama.fi/summary/options/derive?dataType=dailyNotionalVolume,2026-10-21,高
+2026年内名义成交至9月25日,2026-01-01至2026-09-25 UTC,14218359291,USD,同上,https://api.llama.fi/summary/options/derive?dataType=dailyNotionalVolume,2026-10-21,高
+2025全年期权名义成交,2025-01-01至2025-12-31 UTC,5382281742,USD,同上；142.18亿/53.82亿=2.64,https://api.llama.fi/summary/options/derive?dataType=dailyNotionalVolume,2026-10-21,高
+10月1日至7日名义成交,2026-10-01至2026-10-07 UTC,1006627620,USD,含 10 月 6 日迁移日,https://api.llama.fi/summary/options/derive?dataType=dailyNotionalVolume,2026-10-21,高
+名义份额,2026-09-01至2026-09-25 UTC,87.23,percent,Derive Options 占 overview 全部 venue 名义；不是文中的 74.9%,https://api.llama.fi/overview/options?dataType=dailyNotionalVolume,2026-10-21,高
+权利金份额,2026-09-01至2026-09-25 UTC,91.77,percent,Derive Options 占 overview 权利金；不是文中的 88.1%,https://api.llama.fi/overview/options,2026-10-21,高
+名义份额,2026-09-01至2026-09-30 UTC,86.46,percent,完整 9 月,https://api.llama.fi/overview/options?dataType=dailyNotionalVolume,2026-10-21,高
+权利金份额,2026-09-01至2026-09-30 UTC,91.58,percent,完整 9 月,https://api.llama.fi/overview/options,2026-10-21,高
+名义份额,2026-10-07至2026-10-20 UTC,86.34,percent,仅 Derive V3 Options；V2 该窗口为 0,https://api.llama.fi/overview/options?dataType=dailyNotionalVolume,2026-10-21,高
+权利金份额,2026-10-07至2026-10-20 UTC,93.47,percent,Derive V3 Options,https://api.llama.fi/overview/options,2026-10-21,高
+9月21-25日相对9月14-18日名义变化,2026-09-21至09-25 对比 09-14至09-18,19.62,percent,两段都是 5 个 UTC 日；对得上文中 +19.6%,https://api.llama.fi/summary/options/derive?dataType=dailyNotionalVolume,2026-10-21,高
+同期期权费用变化,2026-09-21至09-25 对比 09-14至09-18,-11.78,percent,derive-options 费用 111925/126873；对得上 -11.8%,https://api.llama.fi/summary/fees/derive-options,2026-10-21,高
+9月21-25日全市场收入,2026-09-21至2026-09-25 UTC,120206,USD,父协议 dailyRevenue，含期权永续现货；对得上 120200,https://api.llama.fi/summary/fees/derive?dataType=dailyRevenue,2026-10-21,高
+9月1-25日期权费/名义,2026-09-01至2026-09-25 UTC,1.190,bps,期权费用 408440 / 名义 3431478815,https://api.llama.fi/summary/fees/derive-options,2026-10-21,高
+9月整月期权费/名义,2026-09 UTC,1.217,bps,464907/3820244128,https://api.llama.fi/summary/fees/derive-options,2026-10-21,高
+机构计划 USDC 上限,文档采集日，epoch 自页面所写 June 30 00:00 UTC,500000,USDC,每 28 天上限，不是实际支出；50% 期权 50% 永续,https://docs.derive.xyz/docs/institutional-trading-rewards-program-1,2026-10-21,高
+机构计划 DRV 上限,同上,1000000,DRV,RFQ 20万 + 订单簿 40万 + 永续 40万,https://docs.derive.xyz/docs/institutional-trading-rewards-program-1,2026-10-21,高
+期权 maker 费率最低档,文档采集日,-0.005,percent,"最高档费率表，需分数/成交条件且 ≥1,000,000 stDRV；不是已付金额",https://docs.derive.xyz/docs/institutional-trading-rewards-program-1,2026-10-21,高
+交易激励文本上限,2026-09-24 提案背景表,50000,DRV,每周协议激励；提案未宣布暂停,https://forums.derive.xyz/t/dip-increase-drv-buyback-allocation-from-35-to-50-of-protocol-fees/324,2026-10-21,高
+质押排放,2026-04-23 投票通过，文本写 4 月 22 日 epoch 起,100000,DRV,每周；自 250000 下调。不是流动性采购,https://forums.derive.xyz/t/dip-update-drv-buybacks-staking-emissions-and-unstake-period/313,2026-10-21,高
+回购比例投票,2026-10-02 10:25 UTC 至 2026-10-05 10:25 UTC,35到50,percent,For 47689774 Against 0；执行日未在提案中写死,https://snapshot.org/#/derivexyz.eth/proposal/0x62b103ca38ce307bc3ee40b666ac3dc81683c5ff4b7beede904fff47cdd1d4ac,2026-10-21,高
+战略增发投票,2025-09-23 00:54 UTC 至 2025-10-03 00:54 UTC,500000000,DRV,For 205077007 Against 0；供应从 10 亿到 15 亿的授权,https://forums.derive.xyz/t/dip-strategic-mint-for-institutional-expansion/303,2026-10-21,高
+贡献者额度,提案文本,230000000,DRV,46%，四年，30日 TWAP 市值 1.5 亿美元前不可转让,https://forums.derive.xyz/t/dip-strategic-mint-for-institutional-expansion/303,2026-10-21,高
+战略额度,提案文本,270000000,DRV,通过时 25% 归属，其余 75% 随后 12 个月每 3 个月归属；作者称尚未分配,https://forums.derive.xyz/t/dip-strategic-mint-for-institutional-expansion/303,2026-10-21,高
+五链 totalSupply 合计,2026-10-21,1499999185.03,DRV,ETH+Base+HyperEVM+Arbitrum+Optimism 的 DRV totalSupply 相加,链上 eth_call totalSupply,2026-10-21,高
+DefiLlama 跟踪的以太坊 DRV,2026-10-21,487645145.71,DRV,Ethereum-OwnTokens；等于下列两地址之和，不是已核实的可动用奖励余额,https://api.llama.fi/treasury/derive,2026-10-21,中
+与国库 DRV 加总对齐的地址1,2026-10-21,442576947.499146,DRV,EOA，eth_getCode 为空；治理文本未点名,https://api.ethplorer.io/getTopTokenHolders/0xb1d1eae60eea9525032a6dcb4c1ce336a1de71be?apiKey=freekey&limit=10,2026-10-21,中
+与国库 DRV 加总对齐的地址2,2026-10-21,45068198.207395,DRV,EOA；治理文本未点名,同上,2026-10-21,中
+DefiLlama 跟踪的以太坊 USDC,2026-10-21,4860638.99,USDC,treasury 代币数量；与回购和运营混用，地址未按治理原文复核,https://api.llama.fi/treasury/derive,2026-10-21,中
+已复核的小额 USDC 地址,2026-10-21,8738.42,USDC,Optimism 0xD4C00FE7657791C2A43025dE483F05E49A5f76A6，与 DIP-309 列表及 DefiLlama OP USDC 一致,https://forums.derive.xyz/t/dip-transfer-ownership-of-protocol-parameters-and-treasury-assets-to-derive-bvi-subsidiary/309,2026-10-21,高
+DIP-309 发帖时的估计库存,2026-01-27,USDC 2465420；DRV 142070000,USDC/DRV,发帖估计，不是今日余额；DRV 明确不含战略增发,https://forums.derive.xyz/t/dip-transfer-ownership-of-protocol-parameters-and-treasury-assets-to-derive-bvi-subsidiary/309,2026-10-21,高
+9月全市场返佣代理,2026-09 UTC,139212,USD,父协议费用 654410 减收入 515198,https://api.llama.fi/summary/fees/derive,2026-10-21,中
+9月期权返佣代理,2026-09 UTC,34115,USD,derive-options 费用 464907 减收入 430792,https://api.llama.fi/summary/fees/derive-options,2026-10-21,中
+3月全市场返佣代理,2026-03 UTC,229490,USD,2026 年各月中最高；折 28 天仍低于 50 万上限,https://api.llama.fi/summary/fees/derive,2026-10-21,中
+DRV 现价,2026-10-21T09:54:50Z,0.390044,USD,CoinGecko derive current_price,https://api.coingecko.com/api/v3/coins/derive,2026-10-21,高
+DRV 日价格,2026-09-01,0.1436,USD,CoinGecko market_chart daily,https://api.coingecko.com/api/v3/coins/derive/market_chart?vs_currency=usd&days=90&interval=daily,2026-10-21,高
+DRV 日价格,2026-09-24,0.4897,USD,同上；9 月日线高点附近,https://api.coingecko.com/api/v3/coins/derive/market_chart?vs_currency=usd&days=90&interval=daily,2026-10-21,高
+CoinGecko 总供应,2026-10-21T09:54:50Z,1500000000,DRV,total_supply；流通量 999651283 是供应商口径，不当奖励余额,https://api.coingecko.com/api/v3/coins/derive,2026-10-21,中
+V2到V3名义分录,2026-10-06,29014592 仍记在 Derive Chain,USD,10 月 7 日起日名义只记 Derive V3 Options，Derive Chain 为 0,https://api.llama.fi/summary/options/derive?dataType=dailyNotionalVolume,2026-10-21,高
+V3 迁移停盘安排,2026-09-14 提案；投票 2026-10-04 结束,交易在迁移前 5 分钟停止,n/a,For 107111355 Against 653797。停盘的日历执行以提案流程为准，10 月 6 日低成交与分录切换一致,https://forums.derive.xyz/t/dip-launch-derive-v3/322,2026-10-21,高
+交易奖励暂停,2026-09下旬,未找到官方原文,n/a,论坛搜索无暂停提案；X 检索未完成,https://forums.derive.xyz/search.json?q=trading%20rewards%20pause,2026-10-21,低
+BTC 现货参照,2026-09-21,81169,USD,只作波动混杂的背景，不用于归因,https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=60&interval=daily,2026-10-21,中
+BTC 现货参照,2026-10-06,85771,USD,同上,https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=60&interval=daily,2026-10-21,中
+BTC 现货参照,2026-10-20,81875,USD,同上,https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=60&interval=daily,2026-10-21,中
