@@ -1,0 +1,77 @@
+section,item,window,value,unit,use,note
+completeness,api_count,2026-10-20T10:11:34Z .. 2026-10-21T10:11:34Z,2636,rows,report,Same window re-queried. page_size 1000 => num_pages 3.
+completeness,api_num_pages,page_size 1000,3,pages,report,"Original loop cap was 20, so 3 pages were inside the cap."
+completeness,snapshot_raw_rows,frozen file,2636,rows,report,Equals API count.
+completeness,snapshot_dedup_rows,frozen file,2636,rows,report,Dedup key trade_id + liquidity_role + subaccount_id. Raw equals dedup.
+completeness,earliest_trade,frozen file,2026-10-20T10:19:32Z,utc,report,"Window opened 2026-10-20T10:11:34Z. The 8 minute gap has no rows; count matches, so it is not a missing page."
+completeness,latest_trade,frozen file,2026-10-21T10:07:41Z,utc,report,Window closed 2026-10-21T10:11:34Z.
+completeness,api_count,7d ending at snapshot,20262,rows,report,"21 pages fetched, raw 20262, dedup 20262."
+completeness,pages_fetched,7d,21/21,pages,report,page_size 1000.
+completeness,earliest_trade,7d,2026-10-14T10:13:24Z,utc,report,Window opened 2026-10-14T10:11:34Z.
+completeness,rows_inside_frozen_24h,7d file,2636,rows,report,"Equals the frozen 2636, so the 7d pull contains the snapshot."
+completeness,api_count_not_fetched,30d ending at snapshot,81356,rows,lead,Counted with page_size 1 only. Full tape not pulled.
+channel,RFQ_notional,24h frozen snapshot,178576304.99,usd_taker,report,"trade_amount * index_price, taker rows only."
+channel,RFQ_premium,24h frozen snapshot,2412274.87,usd_taker,report,trade_amount * trade_price. Round-1 check against ticker stats.pr was 1.009 on the 24h tape.
+channel,RFQ_taker_legs,24h frozen snapshot,335,fills,report,One taker fill on one instrument. Maker copy excluded.
+channel,RFQ_notional_share,24h frozen snapshot,0.813272,share_of_taker_notional,report,
+channel,RFQ_premium_share,24h frozen snapshot,0.856531,share_of_taker_premium,report,
+channel,RFQ_leg_share,24h frozen snapshot,0.254173,share_of_taker_legs,report,
+channel,unique_rfq,24h frozen snapshot,203,rfq_id,report,Distinct rfq_id on taker legs. Not an institutional count.
+concentration,RFQ_top5_notional_share,24h frozen snapshot,0.89272,share_of_channel_taker_notional,lead,Addresses are not classified. A wallet can trade both channels.
+concentration,RFQ_top10_notional_share,24h frozen snapshot,0.944906,share_of_channel_taker_notional,lead,
+concentration,RFQ_taker_wallets,24h frozen snapshot,90,wallets,lead,Not registered users.
+channel,CLOB_notional,24h frozen snapshot,41001327.03,usd_taker,report,"trade_amount * index_price, taker rows only."
+channel,CLOB_premium,24h frozen snapshot,404056.78,usd_taker,report,trade_amount * trade_price. Round-1 check against ticker stats.pr was 1.009 on the 24h tape.
+channel,CLOB_taker_legs,24h frozen snapshot,983,fills,report,One taker fill on one instrument. Maker copy excluded.
+channel,CLOB_notional_share,24h frozen snapshot,0.186728,share_of_taker_notional,report,
+channel,CLOB_premium_share,24h frozen snapshot,0.143469,share_of_taker_premium,report,
+channel,CLOB_leg_share,24h frozen snapshot,0.745827,share_of_taker_legs,report,
+concentration,CLOB_top5_notional_share,24h frozen snapshot,0.732808,share_of_channel_taker_notional,lead,Addresses are not classified. A wallet can trade both channels.
+concentration,CLOB_top10_notional_share,24h frozen snapshot,0.874527,share_of_channel_taker_notional,lead,
+concentration,CLOB_taker_wallets,24h frozen snapshot,193,wallets,lead,Not registered users.
+channel,RFQ_notional,7d ending at snapshot,713366379.48,usd_taker,report,"trade_amount * index_price, taker rows only."
+channel,RFQ_premium,7d ending at snapshot,12189070.14,usd_taker,report,trade_amount * trade_price. Round-1 check against ticker stats.pr was 1.009 on the 24h tape.
+channel,RFQ_taker_legs,7d ending at snapshot,2963,fills,report,One taker fill on one instrument. Maker copy excluded.
+channel,RFQ_notional_share,7d ending at snapshot,0.731919,share_of_taker_notional,report,
+channel,RFQ_premium_share,7d ending at snapshot,0.66293,share_of_taker_premium,report,
+channel,RFQ_leg_share,7d ending at snapshot,0.292469,share_of_taker_legs,report,
+channel,unique_rfq,7d ending at snapshot,1897,rfq_id,report,Distinct rfq_id on taker legs. Not an institutional count.
+concentration,RFQ_top5_notional_share,7d ending at snapshot,0.735027,share_of_channel_taker_notional,lead,Addresses are not classified. A wallet can trade both channels.
+concentration,RFQ_top10_notional_share,7d ending at snapshot,0.807339,share_of_channel_taker_notional,lead,
+concentration,RFQ_taker_wallets,7d ending at snapshot,427,wallets,lead,Not registered users.
+channel,CLOB_notional,7d ending at snapshot,261285984.62,usd_taker,report,"trade_amount * index_price, taker rows only."
+channel,CLOB_premium,7d ending at snapshot,6197579.42,usd_taker,report,trade_amount * trade_price. Round-1 check against ticker stats.pr was 1.009 on the 24h tape.
+channel,CLOB_taker_legs,7d ending at snapshot,7168,fills,report,One taker fill on one instrument. Maker copy excluded.
+channel,CLOB_notional_share,7d ending at snapshot,0.268081,share_of_taker_notional,report,
+channel,CLOB_premium_share,7d ending at snapshot,0.33707,share_of_taker_premium,report,
+channel,CLOB_leg_share,7d ending at snapshot,0.707531,share_of_taker_legs,report,
+concentration,CLOB_top5_notional_share,7d ending at snapshot,0.724503,share_of_channel_taker_notional,lead,Addresses are not classified. A wallet can trade both channels.
+concentration,CLOB_top10_notional_share,7d ending at snapshot,0.830888,share_of_channel_taker_notional,lead,
+concentration,CLOB_taker_wallets,7d ending at snapshot,745,wallets,lead,Not registered users.
+options_maj,epoch_1,2024-11-20T00:00:00Z .. 2024-12-18T00:00:00Z,800000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=None; drv_change_pct=None; min_notional=25000"
+options_maj,epoch_2,2024-12-18T00:00:00Z .. 2025-01-15T00:00:00Z,800000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=25000"
+options_maj,epoch_3,2025-01-15T00:00:00Z .. 2025-02-12T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=-400000.0; drv_change_pct=-0.5; min_notional=25000"
+options_maj,epoch_4,2025-02-12T00:00:00Z .. 2025-03-12T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=25000"
+options_maj,epoch_5,2025-03-12T00:00:00Z .. 2025-04-09T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=25000"
+options_maj,epoch_6,2025-04-09T00:00:00Z .. 2025-05-07T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=25000"
+options_maj,epoch_7,2025-05-07T00:00:00Z .. 2025-06-04T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=25000"
+options_maj,epoch_8,2025-06-04T00:00:00Z .. 2025-07-02T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=25000"
+options_maj,epoch_9,2025-07-02T00:00:00Z .. 2025-07-30T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=25000"
+options_maj,epoch_10,2025-07-30T00:00:00Z .. 2025-08-27T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=25000"
+options_maj,epoch_11,2025-08-27T00:00:00Z .. 2025-09-24T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=25000"
+options_maj,epoch_12,2025-09-24T00:00:00Z .. 2025-10-22T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=500"
+options_maj,epoch_13,2025-10-22T00:00:00Z .. 2025-11-19T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=500"
+options_maj,epoch_14,2025-11-19T00:00:00Z .. 2025-12-17T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=500"
+options_maj,epoch_15,2025-12-17T00:00:00Z .. 2026-01-14T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=500"
+options_maj,epoch_16,2026-01-14T00:00:00Z .. 2026-02-11T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=500"
+options_maj,epoch_17,2026-02-11T00:00:00Z .. 2026-03-11T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=500"
+options_maj,epoch_18,2026-03-11T00:00:00Z .. 2026-04-08T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=500"
+options_maj,epoch_19,2026-04-08T00:00:00Z .. 2026-05-06T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=500"
+options_maj,epoch_20,2026-05-06T00:00:00Z .. 2026-06-03T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=32000.0; drv_change=0.0; drv_change_pct=0.0; min_notional=500"
+options_maj,epoch_21,2026-06-03T00:00:00Z .. 2026-07-01T00:00:00Z,400000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=0.0; drv_change=0.0; drv_change_pct=0.0; min_notional=500"
+options_maj,epoch_22,2026-07-01T00:00:00Z .. 2026-07-29T00:00:00Z,200000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC,SOL; OP=0.0; drv_change=-200000.0; drv_change_pct=-0.5; min_notional=500"
+options_maj,epoch_23,2026-07-29T00:00:00Z .. 2026-08-26T00:00:00Z,200000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC,SOL; OP=0.0; drv_change=0.0; drv_change_pct=0.0; min_notional=500"
+options_maj,epoch_24,2026-08-26T00:00:00Z .. 2026-09-23T00:00:00Z,200000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC,SOL; OP=0.0; drv_change=0.0; drv_change_pct=0.0; min_notional=500"
+options_maj,epoch_25,2026-09-23T00:00:00Z .. 2026-10-21T00:00:00Z,200000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC,SOL; OP=0.0; drv_change=0.0; drv_change_pct=0.0; min_notional=500"
+options_maj,epoch_26,2026-10-21T00:00:00Z .. 2026-11-18T00:00:00Z,200000.0,DRV_allocated,report,"days=28.0; currencies=ETH,BTC; OP=0.0; drv_change=0.0; drv_change_pct=0.0; min_notional=500"
+distinction,trader_reward_in_maker_program_cache,93 programs,0,programs_named_trader_reward,lead,"Cache names are OPTIONS-MAJ, OPTIONS-ALT, OPTIONS-MIDCAP, PERPS-MAJ, PERPS-ALT, PERPS-MIDCAP. OPTIONS-MAJ DRV did not go to zero at end-September 2026."

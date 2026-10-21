@@ -1,0 +1,419 @@
+{
+  "snapshot_file": "raw/derive_option_trades_24h.json",
+  "window_24h": {
+    "from": "2026-10-20T10:11:34Z",
+    "to": "2026-10-21T10:11:34Z",
+    "from_ms": 1792491094832,
+    "to_ms": 1792577494832
+  },
+  "completeness_24h": {
+    "api_count_rechecked": 2636,
+    "api_num_pages_at_page_size_1000": 3,
+    "snapshot_raw_rows": 2636,
+    "snapshot_dedup_rows": 2636,
+    "snapshot_rows_in_file": 2636,
+    "snapshot_earliest": "2026-10-20T10:19:32Z",
+    "snapshot_latest": "2026-10-21T10:07:41Z",
+    "inferred_pages_fetched": 3,
+    "note": "The frozen file did not store page count. Same-window recount count equals the frozen row count, and 2636 rows at page_size 1000 is 3 pages. The original loop cap was 20."
+  },
+  "window_7d": {
+    "from": "2026-10-14T10:11:34Z",
+    "to": "2026-10-21T10:11:34Z",
+    "api_count": 20262,
+    "api_num_pages": 21,
+    "pages_fetched": 21,
+    "raw_rows": 20262,
+    "dedup_rows": 20262,
+    "earliest": "2026-10-14T10:13:24Z",
+    "latest": "2026-10-21T10:07:41Z",
+    "rows_inside_frozen_24h": 2636
+  },
+  "window_30d_count_only": {
+    "from": "2026-09-21T10:11:34Z",
+    "to": "2026-10-21T10:11:34Z",
+    "api_count_at_page_size_1": 81356,
+    "api_num_pages_at_page_size_1": 81356,
+    "fetched": false
+  },
+  "channels_24h_snapshot": {
+    "RFQ": {
+      "taker_legs": 335,
+      "unique_rfq": 203,
+      "notional": 178576304.99065173,
+      "premium": 2412274.866077582,
+      "wallets": 90,
+      "top5_notional_share": 0.8927195413876692,
+      "top10_notional_share": 0.9449058856977355
+    },
+    "CLOB": {
+      "taker_legs": 983,
+      "unique_rfq": 0,
+      "notional": 41001327.029885724,
+      "premium": 404056.77744000056,
+      "wallets": 193,
+      "top5_notional_share": 0.7328079688411133,
+      "top10_notional_share": 0.8745267342055265
+    },
+    "ALL": {
+      "taker_legs": 1318,
+      "unique_rfq": 203,
+      "notional": 219577632.02053747,
+      "premium": 2816331.643517575,
+      "wallets": 261,
+      "top5_notional_share": 0.7773886295293598,
+      "top10_notional_share": 0.8932006856640736
+    }
+  },
+  "channels_7d": {
+    "RFQ": {
+      "taker_legs": 2963,
+      "unique_rfq": 1897,
+      "notional": 713366379.4811147,
+      "premium": 12189070.135324245,
+      "wallets": 427,
+      "top5_notional_share": 0.7350274334889841,
+      "top10_notional_share": 0.8073389585079831
+    },
+    "CLOB": {
+      "taker_legs": 7168,
+      "unique_rfq": 0,
+      "notional": 261285984.62216726,
+      "premium": 6197579.416230014,
+      "wallets": 745,
+      "top5_notional_share": 0.7245033595052047,
+      "top10_notional_share": 0.8308882888759618
+    },
+    "ALL": {
+      "taker_legs": 10131,
+      "unique_rfq": 1897,
+      "notional": 974652364.103283,
+      "premium": 18386649.551554218,
+      "wallets": 999,
+      "top5_notional_share": 0.6559170507639546,
+      "top10_notional_share": 0.7649063653529344
+    }
+  },
+  "options_maj_epochs": [
+    {
+      "epoch": 1,
+      "start": "2024-11-20T00:00:00Z",
+      "end": "2024-12-18T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 800000.0,
+      "op": 32000.0,
+      "drv_change": null,
+      "drv_change_pct": null,
+      "min_notional": "25000"
+    },
+    {
+      "epoch": 2,
+      "start": "2024-12-18T00:00:00Z",
+      "end": "2025-01-15T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 800000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "25000"
+    },
+    {
+      "epoch": 3,
+      "start": "2025-01-15T00:00:00Z",
+      "end": "2025-02-12T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": -400000.0,
+      "drv_change_pct": -0.5,
+      "min_notional": "25000"
+    },
+    {
+      "epoch": 4,
+      "start": "2025-02-12T00:00:00Z",
+      "end": "2025-03-12T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "25000"
+    },
+    {
+      "epoch": 5,
+      "start": "2025-03-12T00:00:00Z",
+      "end": "2025-04-09T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "25000"
+    },
+    {
+      "epoch": 6,
+      "start": "2025-04-09T00:00:00Z",
+      "end": "2025-05-07T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "25000"
+    },
+    {
+      "epoch": 7,
+      "start": "2025-05-07T00:00:00Z",
+      "end": "2025-06-04T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "25000"
+    },
+    {
+      "epoch": 8,
+      "start": "2025-06-04T00:00:00Z",
+      "end": "2025-07-02T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "25000"
+    },
+    {
+      "epoch": 9,
+      "start": "2025-07-02T00:00:00Z",
+      "end": "2025-07-30T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "25000"
+    },
+    {
+      "epoch": 10,
+      "start": "2025-07-30T00:00:00Z",
+      "end": "2025-08-27T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "25000"
+    },
+    {
+      "epoch": 11,
+      "start": "2025-08-27T00:00:00Z",
+      "end": "2025-09-24T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "25000"
+    },
+    {
+      "epoch": 12,
+      "start": "2025-09-24T00:00:00Z",
+      "end": "2025-10-22T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "500"
+    },
+    {
+      "epoch": 13,
+      "start": "2025-10-22T00:00:00Z",
+      "end": "2025-11-19T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "500"
+    },
+    {
+      "epoch": 14,
+      "start": "2025-11-19T00:00:00Z",
+      "end": "2025-12-17T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "500"
+    },
+    {
+      "epoch": 15,
+      "start": "2025-12-17T00:00:00Z",
+      "end": "2026-01-14T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "500"
+    },
+    {
+      "epoch": 16,
+      "start": "2026-01-14T00:00:00Z",
+      "end": "2026-02-11T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "500"
+    },
+    {
+      "epoch": 17,
+      "start": "2026-02-11T00:00:00Z",
+      "end": "2026-03-11T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "500"
+    },
+    {
+      "epoch": 18,
+      "start": "2026-03-11T00:00:00Z",
+      "end": "2026-04-08T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "500"
+    },
+    {
+      "epoch": 19,
+      "start": "2026-04-08T00:00:00Z",
+      "end": "2026-05-06T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "500"
+    },
+    {
+      "epoch": 20,
+      "start": "2026-05-06T00:00:00Z",
+      "end": "2026-06-03T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 32000.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "500"
+    },
+    {
+      "epoch": 21,
+      "start": "2026-06-03T00:00:00Z",
+      "end": "2026-07-01T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 400000.0,
+      "op": 0.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "500"
+    },
+    {
+      "epoch": 22,
+      "start": "2026-07-01T00:00:00Z",
+      "end": "2026-07-29T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC,SOL",
+      "drv": 200000.0,
+      "op": 0.0,
+      "drv_change": -200000.0,
+      "drv_change_pct": -0.5,
+      "min_notional": "500"
+    },
+    {
+      "epoch": 23,
+      "start": "2026-07-29T00:00:00Z",
+      "end": "2026-08-26T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC,SOL",
+      "drv": 200000.0,
+      "op": 0.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "500"
+    },
+    {
+      "epoch": 24,
+      "start": "2026-08-26T00:00:00Z",
+      "end": "2026-09-23T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC,SOL",
+      "drv": 200000.0,
+      "op": 0.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "500"
+    },
+    {
+      "epoch": 25,
+      "start": "2026-09-23T00:00:00Z",
+      "end": "2026-10-21T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC,SOL",
+      "drv": 200000.0,
+      "op": 0.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "500"
+    },
+    {
+      "epoch": 26,
+      "start": "2026-10-21T00:00:00Z",
+      "end": "2026-11-18T00:00:00Z",
+      "days": 28.0,
+      "currencies": "ETH,BTC",
+      "drv": 200000.0,
+      "op": 0.0,
+      "drv_change": 0.0,
+      "drv_change_pct": 0.0,
+      "min_notional": "500"
+    }
+  ],
+  "program_names_in_cache": [
+    "OPTIONS-ALT",
+    "OPTIONS-MAJ",
+    "OPTIONS-MIDCAP",
+    "PERPS-ALT",
+    "PERPS-MAJ",
+    "PERPS-MIDCAP"
+  ]
+}
