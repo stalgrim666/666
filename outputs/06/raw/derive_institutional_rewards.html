@@ -1,0 +1,463 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://docs.derive.xyz/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Institutional Trading Rewards Program
+
+> Market maker rewards on Derive: up to $500K USDC and 1M DRV per 28-day epoch, allocated by score, volume, and stDRV holdings.
+
+The Institutional Trading Rewards Program supports the development of options, spot, and perpetual futures trading on the Derive Exchange by increasing liquidity and volume in the central limit order book and RFQ platform, benefiting all participants in the market.
+
+Rewards are distributed in 28-day epochs across a USDC rebate pool and a DRV pool. Fee tier and rebate are determined by a combination of market maker ranking, 28-day trading volume, and stDRV holdings.
+
+> [!NOTE]
+>
+> The program outlined below and all numbers provided are subject to change.
+
+## Eligibility
+
+The program is open to any firm or individual completing the application and meeting program requirements. All applicants are subject to review and approval by the Exchange. The program is opt-in, so all firms must provide the relevant information to be considered for rewards.
+
+If a participant meets the conditions of different fee tiers through market making or total trading volume, they receive their highest eligible fee tier. Wash trading is strictly prohibited and results in disqualification from all reward programs.
+
+## Partner incentives
+
+### Market maker rewards
+
+* Up to **\$500,000 USDC exchange rebates per 28-day epoch**.
+
+### DRV rewards pool
+
+**1M DRV** rewards are distributed to qualifying market makers, split pro-rata by score. Scoring, qualification, and payout mechanics follow the program rules described below.
+
+**Pool allocations:**
+
+| Pool | DRV per epoch |
+| :- | :- |
+| Options RFQ | 200,000 DRV |
+| Options OB | 400,000 DRV |
+| Perps | 400,000 DRV |
+
+**Asset-category split** (percentage allocated across the three categories):
+
+| Category | Share |
+| :- | :- |
+| ETH / BTC / SOL | 50% |
+| HYPE | 25% |
+| Alts (incl. ZEC, XRP, CC, XAUT, LIT, PUMP, VVV) | 25% |
+
+**Per-pool breakdown:**
+
+| | Options RFQ | Options OB | Perps |
+| :- | :- | :- | :- |
+| ETH / BTC / SOL | 100,000 DRV | 200,000 DRV | 200,000 DRV |
+| HYPE | 50,000 DRV | 100,000 DRV | 100,000 DRV |
+| Alts (incl. ZEC, XRP, CC, XAUT, LIT, PUMP, VVV) | 50,000 DRV | 100,000 DRV | 100,000 DRV |
+
+## Trading fees
+
+Derive's fee structure combines a maker/taker fee model with a fee-based rebate program for market makers and volume program participants.
+
+| Fees | Perp maker | Perp taker | Spot maker | Spot taker | Options maker | Options taker |
+| :- | :- | :- | :- | :- | :- | :- |
+| ETH | 1 bps | 3 bps | 15 bps | 15 bps | 1 bps | 3 bps |
+| BTC | 1 bps | 3 bps | 15 bps | 15 bps | 1 bps | 3 bps |
+| ALT | 1 bps | 3 bps | 15 bps | 15 bps | 1 bps | 3 bps |
+
+> [!NOTE]
+>
+> Derive's matching fees are subject to change.
+
+## USDC rewards pool
+
+Market makers add value to the protocol by lowering the cost to trade. The Derive Exchange pays program participants on their maker volume and offers discounts to high-volume takers through a rebate program. Trading rebates are distributed in 28-day epochs.
+
+**\$500,000 USDC rewards pool per 28-day epoch**
+
+* \$250K (50%) options.
+* \$250K (50%) perpetual futures (50% to majors, 50% to alt markets).
+* Participants receive discounted fees atomically.
+* Negative fees are processed as a rebate at the end of each epoch.
+* New market makers are eligible to receive the introductory top fee tier for the first full epoch of quoting.
+* Fee tier and rebate are determined by market maker ranking, volume, and stDRV holdings.
+
+### Option fee tiers
+
+| MM % Score Share | | 28-day Volume | | 28-day Volume Share | | stDRV Holdings | Option Maker | Option Taker | Spot Maker | Spot Taker | RFQ Maker Discount | RFQ Taker Discount |
+| :- | :- | :- | :- | :- | :- | :- | :- | :- | :- | :- | :- | :- |
+| 10% | OR | ≥ 500M | OR | ≥ 7.5% | AND | ≥ 1,000,000 stDRV | -0.005% | 0.0075% | -0.01% | 0.05% | 100% | 75% |
+| 10% | OR | ≥ 500M | OR | ≥ 7.5% | OR | ≥ 1,000,000 stDRV | -0.0025% | 0.01% | 0% | 0.05% | 75% | 50% |
+| 5% | OR | ≥ 250M | OR | ≥ 5% | OR | ≥ 500,000 stDRV | -0.0013% | 0.0125% | 0.05% | 0.07% | 25% | 25% |
+| 1% | OR | ≥ 50M | OR | ≥ 2% | OR | ≥ 200,000 stDRV | 0% | 0.015% | 0.1% | 0.09% | 10% | 10% |
+| All traders | | | | | | | 0.01% | 0.03% | 0.15% | 0.15% | 0% | 0% |
+
+### Perp fee tiers
+
+| MM % Score Share | | 28-Day Volume | | 28-Day Volume Share | | Staked DRV | Perp Maker | Perp Taker |
+| :- | :- | :- | :- | :- | :- | :- | :- | :- |
+| 10% | OR | ≥ 500M | OR | ≥ 7.5% | AND | ≥ 1,000,000 | -0.01% | 0.015% |
+| 10% | OR | ≥ 500M | OR | ≥ 7.5% | OR | ≥ 1,000,000 | -0.005% | 0.02% |
+| 5% | OR | ≥ 250M | OR | ≥ 5% | OR | ≥ 500,000 | -0.0025% | 0.025% |
+| 1% | OR | ≥ 50M | OR | ≥ 2% | OR | ≥ 200,000 | 0% | 0.03% |
+| All traders | | | | | | | 0.01% | 0.03% |
+
+> [!NOTE]
+>
+> MM ranking, volume share, and stDRV holding requirements are by market: spot, options, and perps are counted separately. To achieve the best fee tiers across programs, 1M stDRV is required per program, i.e. 2M for both options and perps. Discounts apply on a percentage basis to fees on spreads and other complex fee logic, and are calculated pro-rata if the \$500K rewards pool is exceeded. Fees are subject to change. See the [Trading Fees](https://docs.derive.xyz/integrators/trading/trading-fees.md) page for the base schedule.
+
+## Obligations
+
+The central limit order book is snapshotted randomly in 15-minute windows to evaluate market maker performance. To qualify for rewards, traders must meet:
+
+* **Minimum quote size:** 500
+* **Delta range:** only options with a delta > 1 and \< 98 are included in scoring snapshots
+* **28-day notional trading volume:** > \$50M
+* **Trading volume share:** > 2%
+
+## Additional incentives
+
+### Increased rate limits
+
+Rate limits on matching-engine requests safeguard the exchange's order-processing capacity. Program participants qualify for the highest matching-engine rate-limit tier. Initially there are two tiers based on market maker and taker status; the exchange reserves the right to add tiers assigned by a combination of volume share and market maker rankings.
+
+![Rate limit tiers for market makers and taker program participants.](https://files.readme.io/3b8ed9789693cda59222a4bdcb7e1ead4c08c17e8159f70acda60846c3385580-image.png)
+
+For the V3 API rate-limit model, see [Rate Limits](https://docs.derive.xyz/integrators/trading/rate-limits.md).
+
+### Advanced market maker protections
+
+Participants in the program may enable:
+
+* Cancel on disconnect
+* Trade limit — max number of trades per time interval
+* Quantity limit — max number of instruments per time interval
+* Delta limit — max delta per time interval
+* Post-only — order rejects if it would execute on post
+* Frozen time — auto-reset of MMPs
+* Manual reset (if desired)
+
+See [Market Maker Protections](https://docs.derive.xyz/integrators/trading/market-maker-protections.md) for the V3 configuration API.
+
+### How to participate
+
+* **No commitments required.**
+* Contact information: [Google form](https://forms.gle/ivDyhdSUGGWPJsJh7).
+
+### Monitoring and termination of status
+
+The Exchange reserves the right to remove any participant from the program if the Exchange has determined, in good faith, that the participant consistently and egregiously underperforms the obligations, as determined by the Exchange in its sole discretion. The Exchange also reserves the right to prohibit the participant and any affiliated entities or individuals from trading, accessing, or participating in any Exchange products and programs for an indefinite period of time, including a prohibition that extends for several years, if the Exchange determines the participant is found to have engaged in willful misconduct of Exchange Rules.
+
+## Market making scoring calculations
+
+Market makers are scored on:
+
+* **Market coverage**
+* **Market quality**
+
+Market coverage and market quality scores are boosted by:
+
+* Distance-from-best-market multiplier
+* Market scaling factor
+
+RFQ scores are boosted by:
+
+* Distance from max cost
+* Time score
+* Market scaling factors
+
+MM scores are then weighted by:
+
+* Volume share
+
+### Distance from best market multipliers
+
+MM scores for market coverage and market quality include multipliers based on an order's price distance from the best market price. The further quotes are away from the BBO, the lower the multiplier. The closer to the BBO, the higher. Low-quality markets have a multiplier of 0.
+
+| Distance from BBO — Options | Multiplier |
+| :- | :- |
+| \< 0.10% | 5 |
+| 0.10% \< Order Price \< 0.50% | 1.5 |
+| 0.50% \< Order Price \< 1.0% | 1 |
+| 1.0% \< Order Price \< 2.0% | 0.5 |
+| > 2% | 0 |
+
+| Distance from BBO — Perps | Multiplier |
+| :- | :- |
+| \< 0.0050% | 5 |
+| 0.005% \< Order Price \< 0.01% | 1.5 |
+| 0.01% \< Order Price \< 0.05% | 1 |
+| 0.05% \< Order Price \< 0.10% | 0.5 |
+| > 0.1% | 0 |
+
+> [!NOTE]
+>
+> Weightings and categories are subject to change; the docs carry the latest.
+
+### Distance from max cost
+
+An MM's RFQ score includes multipliers based on a response's distance from the maximum cost of the order. The closer to Max Cost, the lower the multiplier; the more competitive the response, the higher.
+
+| Distance from Max Cost | Multiplier |
+| :- | :- |
+| \< 0% | 0 |
+| 0 – 1% | 1 |
+| 1 – 3% | 2 |
+| 3%+ | 4 |
+
+### Market scaling factor
+
+Each market, set of expiries, or group of strikes can have a unique Market Scaling Factor to encourage liquidity. As markets mature, MSF can be set to 0 and new markets are incentivised. Initially all market scaling factors are set to 1.
+
+| Market | Market Scaling Factor |
+| :- | :- |
+| ETH Perps | 1 |
+| ETH Weekly Options \< 7 DTE | 3 |
+| ETH Long-Dated Options > 7 DTE | 1 |
+| BTC Perps | 1 |
+| BTC Weekly Options \< 7 DTE | 3 |
+| BTC Long-Dated Options > 7 DTE | 1 |
+| SOL Perps | 1 |
+| DOGE Perps | 1 |
+
+| Alt markets | Market Scaling Factor |
+| :- | :- |
+| BNB | 1 |
+| XRP | 1 |
+| LINK | 1 |
+| AVAX | 1 |
+| UNI | 1 |
+| TAO | 1 |
+| WIF | 1 |
+| OP | 1 |
+| NEAR | 1 |
+| ARB | 1 |
+| Aave | 1 |
+| INJ | 1 |
+| BONK | 1 |
+| TIA | 1 |
+| SUI | 1 |
+| ENA | 1 |
+| PEPE | 1 |
+| Worldcoin | 1 |
+| SEI | 1 |
+| EIG | 1 |
+
+### Option and perpetual futures scoring
+
+#### Market coverage
+
+**Time in market:** the percentage of the time an MM's quotes are on for specified strikes and expiries. An MM is considered "on" if they are meeting min quoting obligations when the snapshot is taken.
+
+$\sqrt{\frac{\sum (\text{snapshots MM is on} \times \text{Distance from Best Market Multiplier})}{\text{snapshots taken}}} \times \text{Market Scaling Factor}$
+
+Where:
+
+* `Db` = Distance from Best Market Multiplier on the bid side
+* `Da` = Distance from Best Market Multiplier on the ask side
+* `N` = number of snapshots taken
+* `n` = number of snapshots MM is on for
+* `F` = Market Scaling Factor
+
+![Market coverage formula.](https://files.readme.io/739ac9b27ff42abce3058148f14cb5f6b8e781afd332c5db448f93c609889d12-Schermafbeelding_2024-11-27_om_00.30.52.png)
+
+#### Market quality
+
+**Book size:**
+
+* `Vb` = MM quantity bid volume, scaled by its multiplier
+* `Va` = MM scaled quantity ask volume
+* `Ta` = Total scaled quantity ask volume
+* `Tb` = Total scaled quantity bid volume
+* `Dmax` = Maximum Distance from BBO Multiplier (currently 5x)
+
+Total MM bid/ask volume relative to the exchange's total bid/ask volume, taken at each snapshot. `Sqrt` is applied to smooth results. Scaled volumes are volumes scaled by the distance-from-BBO multipliers (a \$1,000 notional at top of book counts as \$5,000).
+
+![Market quality formula.](https://files.readme.io/ebe599e1f0b6764d0236526782da862b739dddc4cc5253bf22ca6d38187a1c69-Schermafbeelding_2024-11-27_om_00.34.06.png)
+
+### Trading volume multiplier
+
+MM score is boosted by percentage volume traded. Volume Weight = 0.
+
+![Trading volume multiplier formula.](https://files.readme.io/9d3d061a3e8ee639b09cf328992a0b06ef4494c7033309c25b92ecee75a0eacc-Schermafbeelding_2024-11-27_om_01.19.26.png)
+
+### Final score
+
+![Final score formula.](https://files.readme.io/325f9dfd5b7d64149f62b2395efa5a6b4b43c4cc8c1260c830f41c7bcdac272a-Schermafbeelding_2025-02-25_om_00.07.11.png)
+
+### Example (Options)
+
+| | Market Coverage | Market Quality | Quote Efficiency | Initial Score | Initial Rank | Volume Boost | Final Score | Final Rank |
+| :- | :- | :- | :- | :- | :- | :- | :- | :- |
+| Metrics | Time in Market | Book Size | Msg-Volume Ratio | Score | | | | |
+| Weight | 50% | 40% | 10% | 100% | | | | |
+| Score | 0.8 | 0.9 | 0.001 | | | | | |
+| Results | 0.40 | 0.36 | 0.0001 | 0.761 | 5 | 1.2 | 1.09 | 3 |
+
+## RFQ score
+
+RFQ quoting is scored independently of the order-book Market Coverage and Market Quality components and is paid from its own **RFQ reward pool**. The RFQ pool is split by asset category, and **each category is its own competition**, scored and paid out pro-rata within that category:
+
+| Asset Category | RFQ Pool (per epoch) |
+| :- | :- |
+| ETH / BTC / SOL | 100,000 DRV |
+| HYPE | 50,000 DRV |
+| Alts (incl. ZEC / XRP / CC / XAUT) | 50,000 DRV |
+
+A market maker's share of a category's RFQ pool equals its RFQ score divided by the sum of all market makers' RFQ scores in that category.
+
+Only **filled RFQs** are scored. An RFQ that is requested but never filled contributes nothing to any market maker's score. On a filled RFQ, every market maker that submitted a maker quote is scored, not only the one that filled.
+
+### What is measured
+
+Each maker quote on a filled RFQ is evaluated on two dimensions, **price competitiveness** and **responsiveness**, each combined with a per-market weight, the **Market Scaling Factor**.
+
+#### 1. Distance from Max Cost multiplier
+
+*Max Cost* is the worst price the taker is willing to accept on the RFQ: the maximum total the taker will pay when buying, or the minimum total the taker will receive when selling. A maker quote's **Distance from Max Cost** is the percentage by which the quote improves on that worst-acceptable price:
+
+```text theme={null}
+Distance from Max Cost (%) =  ( MaxCost − QuoteCost ) / MaxCost × 100      (taker buying)
+                           =  ( QuoteProceeds − MinProceeds ) / MinProceeds × 100  (taker selling)
+```
+
+A larger positive distance means the maker offered the taker a better price:
+
+| Price improvement vs Max Cost | Multiplier |
+| :- | :- |
+| Wrong side / no improvement (≤ 0%) | 0 |
+| 0% – 1% | 1 |
+| 1% – 3% | 2 |
+| > 3% | 4 |
+
+A quote no better than the taker's worst acceptable price earns 0; the multiplier rises in steps as the quote becomes more competitive.
+
+**Example.**
+
+* *Taker buying.* Max Cost = 1,400. A maker quotes a total cost of \$1,386: Distance = (1,400 − 1,386) / 1,400 × 100 = **1.0%** → 0%–1% band → **multiplier = 1**. A sharper maker quoting \$1,330 gives (1,400 − 1,330) / 1,400 × 100 = **5.0%** → above 3% → **multiplier = 4**.
+* *Taker selling.* Min Proceeds = 1,400. A maker quoting proceeds of \$1,430 gives (1,430 − 1,400) / 1,400 × 100 = **2.14%** → 1%–3% band → **multiplier = 2**.
+
+#### 2. Time Score
+
+Measures how quickly a market maker first engages with an RFQ, based on the elapsed time between the RFQ's creation and the market maker's **first** quote. Only the first quote counts; submitting further quotes does not reset the timer.
+
+| Time to first quote | Time Score |
+| :- | :- |
+| ≤ 5 minutes | 2 |
+| ≤ 15 minutes | 1 |
+| > 15 minutes | 0.5 |
+
+#### 3. Market Scaling Factor (F)
+
+The Market Scaling Factor is the same per-market weight used throughout the rewards program. For RFQ scoring, `F` is the sum of the scaling factors of the RFQ's individual **option legs**. Each leg is weighted by its market and its tenor: a leg expiring in 7 days or less uses that market's short-dated weight; a leg expiring in more than 7 days uses its long-dated weight. Non-option legs (perpetual or spot) carry no RFQ weight.
+
+**Current option-market weights.** Only markets that list options contribute to the RFQ score:
+
+| Options market | Short-dated (≤ 7 days) | Long-dated (> 7 days) |
+| :- | :- | :- |
+| ETH | 5.0 | 1.0 |
+| BTC | 5.0 | 1.0 |
+| SOL | 5.0 | 1.0 |
+| HYPE | 5.0 | 1.0 |
+| ADA | 5.0 | 1.0 |
+| ZEC | 5.0 | 1.0 |
+| XRP | 5.0 | 1.0 |
+| XAUT | 5.0 | 1.0 |
+| CC | 5.0 | 1.0 |
+
+Every options market currently carries the same weighting: short-dated legs (7 days or less to expiry) are weighted **5.0** and longer-dated legs **1.0**, reflecting the program's emphasis on near-term liquidity. Markets that trade only perpetuals do not list options and therefore contribute no RFQ weight.
+
+### The fill boost
+
+On every filled RFQ, one market maker's quote is the one that transacts with the taker. That market maker receives a **fill boost of 1.2×**. Every other market maker that submitted a quote on the same filled RFQ still scores, but its contribution is scaled by **0.5×**. This rewards winning the trade while still crediting competitive quotes that did not fill.
+
+### Putting it together
+
+For each filled RFQ, and for each market maker that quoted it:
+
+1. Take the market maker's **best Distance-from-Max-Cost multiplier** across all of its quotes on that RFQ.
+2. Take the market maker's **Time Score** from its **first** quote on that RFQ.
+3. Add the two and weight by the **Market Scaling Factor** `F`: `F × (DistanceScore + TimeScore)`.
+4. Apply the **fill boost**: ×1.2 for the market maker that filled the RFQ, ×0.5 for every other market maker that quoted it.
+
+A market maker's contributions are summed across every filled RFQ in the epoch. That single total is then divided by the category's total RFQ fees and square-rooted (the square root smooths the distribution across market makers):
+
+```text theme={null}
+contribution(MM, RFQ) = fillBoost × F × ( DistanceScore + TimeScore )
+
+                       (  Σ  contribution(MM, RFQ)  )
+RFQScore(MM) = sqrt    ( ─────────────────────────── )
+                       (         TotalRFQFees        )
+
+where the sum Σ runs over all filled RFQs the Market Maker quoted.
+```
+
+Where `fillBoost = 1.2` if the market maker filled the RFQ, else `0.5`. The sum in the numerator runs over every filled RFQ the market maker quoted, and `TotalRFQFees` divides that whole sum once (not each term).
+
+### Variables
+
+* **DistanceScore** — Distance-from-Max-Cost multiplier (0 / 1 / 2 / 4) for the market maker's best quote on the RFQ.
+* **TimeScore** — Time Score (2 / 1 / 0.5) from the market maker's first quote.
+* **F** — Market Scaling Factor, summed over the RFQ's option legs.
+* **fillBoost** — 1.2 for the filling market maker, 0.5 for all other quoters on that filled RFQ.
+* **TotalRFQFees** — the normalisation denominator: the sum of the taker fees paid on **every filled RFQ scored in that category** over the epoch, across all market makers. It is the same value for every market maker in the category, so it does not change the ranking within a category; it puts each category's scores on a comparable, fee-weighted scale. Because it divides the summed contributions, a market maker earns more when its competitive, well-timed quotes represent a larger share of the fees actually transacted in the category.
+
+### Example
+
+Alice sends an RFQ to **buy 100 ETH weekly call options** (expiry \< 7 days). The benchmark is the RFQ's Max Cost — say **\$1,400** for the lot. The market's short-dated ETH scaling factor is **F = 3**. Two market makers respond:
+
+**ABC** submits one quote at **t = 200 s** for a total cost of **\$1,386**:
+
+* Price improvement = (1,400 − 1,386) / 1,400 = **1%** → DistanceScore = **1**
+* First quote at 200 s (≤ 5 min) → TimeScore = **2**
+* ABC does not fill → fillBoost = **0.5**
+* contribution = 0.5 × 3 × (1 + 2) = **4.5**
+
+**XYZ** submits two quotes — **\$1,360 at t = 500 s**, then **\$1,330 at t = 800 s**, which fills:
+
+* Best price improvement across its quotes = (1,400 − 1,330) / 1,400 = **5%** → DistanceScore = **4**
+* First quote at 500 s (≤ 15 min) → TimeScore = **1**
+* XYZ fills → fillBoost = **1.2**
+* contribution = 1.2 × 3 × (4 + 1) = **18.0**
+
+Suppose this pool's total RFQ fees for the epoch are **\$18**. Then:
+
+* RFQScore(XYZ) = √(18.0 / 18) = **1.00**
+* RFQScore(ABC) = √(4.5 / 18) = **0.50**
+
+XYZ ranks above ABC: it filled (1.2× vs 0.5×) and offered more price improvement, even though ABC responded faster.
+
+### Notes
+
+* **Filled RFQs only.** Unfilled RFQs are not scored; quoting competitively without ever filling still earns (via the 0.5× quoter boost on RFQs that other market makers fill), but filling is worth substantially more.
+* **Self-trades are excluded.** A market maker's quotes on an RFQ that it itself created as the taker are not scored.
+* **Multi-currency RFQs** are split across asset categories in proportion to the Market Scaling Factor that each currency's option legs contribute, so a single RFQ can feed more than one category pool.
+* **Anti-spam floor.** A per-currency minimum RFQ notional can be applied; any currency leg below that floor is dropped from scoring.
+* Only **option** legs are scored for RFQ; perp/spot legs contribute no RFQ score.
+
+## Related
+
+> **[Trading Fees](https://docs.derive.xyz/integrators/trading/trading-fees.md)**
+>
+> Base maker/taker fees that the tier discounts apply to.
+
+> **[Rate Limits](https://docs.derive.xyz/integrators/trading/rate-limits.md)**
+>
+> How program participants qualify for higher matching-engine rate limits.
+
+> **[Market Maker Protections](https://docs.derive.xyz/integrators/trading/market-maker-protections.md)**
+>
+> Advanced MMPs, cancel-on-disconnect, and open-orders margin.
+
+> **[RFQ Trading](https://docs.derive.xyz/trading/rfq.md)**
+>
+> How to send and quote RFQs on V3.
+
+
+## Related topics
+
+- [Trading Fees on Derive: Maker, Taker, RFQ, and Liquidation](https://docs.derive.xyz/integrators/trading/trading-fees.md)
+- [Rate Limits for Integrators and Market Makers](https://docs.derive.xyz/integrators/trading/rate-limits.md)
+- [Integrators and Market Makers](https://docs.derive.xyz/integrators/introduction.md)
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.
