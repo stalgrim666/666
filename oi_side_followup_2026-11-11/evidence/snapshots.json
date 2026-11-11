@@ -1,0 +1,47 @@
+{
+  "sampled_around": "2026-11-11T07:50:00Z",
+  "edgex_ticket_summary": {
+    "endpoint": "GET https://edgex-prod-v2.edgex.exchange/api/v2/public/quote/getTicketSummary?period=LAST_DAY_1",
+    "requestTime": "1794383454053",
+    "tickerSummary": {
+      "openInterest": "294021283.9360687211728399460",
+      "period": "LAST_DAY_1",
+      "trades": "1054078",
+      "value": "688723749.5321400"
+    },
+    "later_headline_used_in_sum_check": "294117220.2067933147225027810",
+    "sum_of_157_tickers_base_times_mark": "293881192.2327829881141118986"
+  },
+  "edgex_btc_ticker": {
+    "contractId": "30000001",
+    "contractName": "BTCUSDC",
+    "openInterest": "2259.752",
+    "markPrice": "73835.222700739777781407",
+    "note": "First read. The sum-check used a few seconds later: openInterest 2259.757, mark 73847.781831560690095187."
+  },
+  "aster_announcement_588": {
+    "title": "ApolloX Sunset Update",
+    "subtitle": "Legacy APX Contract Sunset Begins November 3, 2026, at 10:00 UTC (Expected Completion Within 48 Hours)",
+    "publishTime": 1793692802000,
+    "publishTime_utc": "2026-11-03T08:00:02Z"
+  },
+  "nado_btc_paired": {
+    "archive_product_2_x18_div_1e18": "22963383.650024998879418504",
+    "contracts_open_interest_usd": 22963383.650025,
+    "contracts_long_open_interest_usd": 11481691.8250125,
+    "long_over_open_interest": 0.5
+  },
+  "grvt_openview_2026_11_10": {
+    "start_timestamp": 1794268800,
+    "end_timestamp": 1794355200,
+    "dailyOpenInterest": "381644023.17145",
+    "dailyLongOpenInterest": "",
+    "dailyShortOpenInterest": ""
+  },
+  "defillama_edgex_chart_point": {
+    "endpoint": "https://api.llama.fi/summary/open-interest/edgex",
+    "timestamp": 1794355200,
+    "timestamp_utc": "2026-11-11T00:00:00Z",
+    "value_usd": 147695684
+  }
+}
