@@ -1,0 +1,415 @@
+{
+  "version": 3,
+  "audit_id": "oi_side_audit_2026-11-11",
+  "round": "unresolved_followup",
+  "generated_at": "2026-11-11T08:10:00Z",
+  "definition": {
+    "one_sided": "每份未平仓合约的名义金额只计一次。CLOB 取多空配平后的一侧；池子不计资金池镜像；RFQ 不计做市商镜像。",
+    "factor": "官方原始字段已经是单侧时 factor=1.0；原始字段包含双方镜像持仓时 factor=0.5。",
+    "scope": "本轮只复核尚未闭合的官方原始 OI 字段。DefiLlama 只作为转换规则对照，不作为官方定义。"
+  },
+  "source_pin": {
+    "repo": "DefiLlama/dimension-adapters",
+    "sha": "1204e61680a1a4583d3b2d43f7c2c94b254d3d28",
+    "committed_at": "2026-11-11T06:07:53Z",
+    "note": "沿用上一轮审计钉住的 master。该提交本身只改 fees/hedgehood-stock-lend；OI 适配器内容取自此 SHA 上的文件。"
+  },
+  "venues": [
+    {
+      "project": "edgeX V2",
+      "official_fields": [
+        {
+          "name": "getTicker.openInterest",
+          "endpoint": "GET https://edgex-prod-v2.edgex.exchange/api/v2/public/quote/getTicker?contractId={id}",
+          "raw_unit": "base asset",
+          "aggregation": "single contract"
+        },
+        {
+          "name": "getTicketSummary.tickerSummary.openInterest",
+          "endpoint": "GET https://edgex-prod-v2.edgex.exchange/api/v2/public/quote/getTicketSummary?period=LAST_DAY_1",
+          "raw_unit": "USD",
+          "aggregation": "platform headline"
+        }
+      ],
+      "side": null,
+      "confirmed_factor": null,
+      "provisional_factor": null,
+      "validation_status": "unresolved",
+      "confidence": "unresolved",
+      "defillama": {
+        "file": "open-interest/edgex-v2.ts",
+        "transform": "tickerSummary.openInterest / 2",
+        "correct": null,
+        "published_open_interest_usd": 147695684,
+        "published_at": "2026-11-11T00:00:00Z",
+        "published_over_official_headline": 0.5022,
+        "judgment": "官方平台汇总已经等于逐市场 base×mark 之和。DefiLlama 仍把这个汇总再除以 2，公开值约为官方标题值的一半。没有官方计数定义，也没有同水位持仓合计，所以这次除以 2 不能判为正确，也不能判为已经证实的错误折半。"
+      },
+      "calculation": {
+        "sampled_at": "2026-11-11T07:50:54Z",
+        "tradeable_contracts": 157,
+        "sum_ticker_openInterest_times_mark_usd": "293881192.2327829881141118986",
+        "tickerSummary_openInterest_usd": "294117220.2067933147225027810",
+        "headline_over_sum": "1.000803140793791829640243465",
+        "btc": {
+          "contractId": "30000001",
+          "contractName": "BTCUSDC",
+          "openInterest_base": "2259.757",
+          "markPrice": "73847.781831560690095187",
+          "usd": "166878041.9283420903674294896"
+        },
+        "eth_usd": "63784855.24181916372154120875",
+        "sol_usd": "25346514.71234732974561963760"
+      },
+      "evidence": [
+        "官方 Quote API 与 Golang SDK 只把 openInterest 标成 Open Interest，没有多空拆分，也没有计数公式。",
+        "BTCUSDC 的 openInterest 是 2259.757，乘 mark 后为 1.669 亿美元，单位是基础币。",
+        "157 个 enableTrade 且 enableDisplay 的合约，openInterest×mark 之和与 tickerSummary.openInterest 的比值是 1.0008。平台汇总与逐市场字段是同一计数侧、同一覆盖范围。",
+        "priceType=OPEN_INTEREST 的 K 线在 1 分钟、1 小时、1 日窗口都返回空列表，不能用成交量变化反推计数侧。",
+        "DefiLlama PR #9365（2026-09-15）把 edgeX 列为已经单侧、不做除法。PR #9685（2026-09-25，标题 edgex double count the oi）在没有正文和测量说明的情况下加上 /2。CodeRabbit 写明该改动没有证明字段是双侧。"
+      ],
+      "gaps": [
+        "缺少一份与 ticker 同一时刻的 BTC 持仓合计：多头基础币合计若接近 2259.757，则 factor=1；若接近 1129.9，则 factor=0.5。",
+        "公开 REST 没有账户持仓列表，OPEN_INTEREST K 线为空。最小补证是交易所以认证或内部统计给出该时刻的 long base size。"
+      ],
+      "dashboard_recommendation": "不要把 DefiLlama 的 0.5 写进官方字段系数。官方标题值单独展示，侧数保持未解，直到有同水位持仓合计。"
+    },
+    {
+      "project": "Aster",
+      "official_fields": [
+        {
+          "name": "bapi aster/ticker/pair openInterest",
+          "endpoint": "GET https://www.asterdex.com/bapi/future/v1/public/future/aster/ticker/pair",
+          "also_served_by": "https://www.apollox.finance/bapi/future/v1/public/future/aster/ticker/pair",
+          "raw_unit": "USD",
+          "product": "现行 Aster 永续，594 个市场"
+        },
+        {
+          "name": "bapi apx/pair openInterest",
+          "endpoint": "GET https://www.apollox.finance/bapi/future/v1/public/future/apx/pair?excludeCake=true",
+          "also_served_by": "https://www.asterdex.com/bapi/future/v1/public/future/apx/pair?excludeCake=true",
+          "raw_unit": "USD",
+          "product": "旧 ApolloX APX 永续，53 个市场，符号为 *USD"
+        },
+        {
+          "name": "fapi /fapi/v1/openInterest",
+          "endpoint": "GET https://fapi.asterdex.com/fapi/v1/openInterest?symbol={symbol}",
+          "raw_unit": "base asset",
+          "product": "与 aster BAPI 同一套现行市场"
+        }
+      ],
+      "side": "aster BAPI 约为 FAPI 美元化后的 2 倍；apx 当前没有未平仓",
+      "confirmed_factor": null,
+      "provisional_factor": 0.5,
+      "validation_status": "provisional",
+      "confidence": "B+",
+      "apx_in_active_sum": false,
+      "defillama": {
+        "file": "open-interest/apollox.ts",
+        "transform": "(sum aster BAPI openInterest + sum apx BAPI openInterest) / 2",
+        "correct_for_aster_route": "matches FAPI one-sided USD on every sampled market",
+        "merge_apx": "currently adds zero; drop it from the active sum and keep a nonzero alarm",
+        "cited_doc_sentence_found": false,
+        "judgment": "aster 路由除以 2 后与 FAPI 的基础币×mark 对齐。apx 路由继续并入只增加一个恒为零的项。DefiLlama 注释里的 Aster 文档原句，在 asterdex/api-docs 的 BAPI 与 V3 期货文档中没有找到。"
+      },
+      "calculation": {
+        "sampled_at": "2026-11-11T07:53:00Z",
+        "aster_bapi_markets": 594,
+        "aster_bapi_sum_usd": "2661525213.42380816109",
+        "apx_markets": 53,
+        "apx_nonzero_oi": 0,
+        "apx_quote_volume_sum": "0",
+        "ratios_bapi_usd_over_fapi_base_times_mark": {
+          "BTCUSDT": "2.00023",
+          "ETHUSDT": "1.99968",
+          "SOLUSDT": "2.00044",
+          "TSLAUSDT": "1.99931",
+          "XAUUSDT": "1.99973",
+          "SUSHIUSDT": "1.99722",
+          "ASTERUSDT": "1.99690"
+        },
+        "btc": {
+          "bapi_openInterest_usd": "930244190.3186",
+          "fapi_openInterest_base": "6291.511",
+          "fapi_mark": "73920.09138406",
+          "fapi_usd": "465069068.06381871466"
+        }
+      },
+      "evidence": [
+        "两个主机上的 aster/ticker/pair 与 apx/pair 返回同一组数字。aster 是 *USDT 市场；apx 是 *USD、productType=Perpetual 的 53 个市场。",
+        "公告 id 588《ApolloX Sunset Update》发布于 2026-11-03T08:00:02Z，写明 apollox.finance 的网页和 API 进入清退，旧 APX 合约自 2026-11-03T10:00:00Z 起清退，预计 48 小时内完成。采样日 2026-11-11 已过该窗口。",
+        "apx 53 个市场的 openInterest、baseVol、qutoVol 全部为 0，lastPrice 仍在更新。路由还活着，仓位和成交是空的。",
+        "BTC、ETH、SOL、TSLA、XAU、SUSHI、ASTER 七个市场上，aster BAPI 的美元 OI 与 FAPI 基础币×mark 的比值在 1.997 到 2.000 之间。",
+        "FAPI 的字段形状与 Binance USDT-M openInterest 相同，返回基础币数量。Aster 自己的公开文档没有写出双侧公式。"
+      ],
+      "gaps": [
+        "没有在 Aster 官方文档中找到 “calculated both ways” 原句。系数来自 BAPI 与 FAPI 的同市场比值，以及 FAPI 沿用的单侧合约数量口径。",
+        "594 个市场没有逐个对 FAPI。已覆盖币、股票、商品和平台币。若某个市场偏离 2，需要单独剔除。"
+      ],
+      "dashboard_recommendation": "活跃汇总只使用 aster BAPI，provisional_factor=0.5，使结果与 FAPI 美元化 OI 对齐。apx 移出活跃汇总，并在任一市场 openInterest 或成交量变为非零时告警。"
+    },
+    {
+      "project": "Hyperliquid",
+      "official_fields": [
+        {
+          "name": "metaAndAssetCtxs[].openInterest",
+          "endpoint": "POST https://api.hyperliquid.xyz/info {type: metaAndAssetCtxs}",
+          "raw_unit": "base asset",
+          "usd": "openInterest * markPx"
+        }
+      ],
+      "side": "long base + short base",
+      "confirmed_factor": null,
+      "provisional_factor": 0.5,
+      "validation_status": "provisional",
+      "confidence": "B+",
+      "defillama": {
+        "file": "helpers/hyperliquid.ts queryHyperliquidIndexerOpenInterest",
+        "transform": "(openInterest * markPx) / 2，主 perp 与 HIP-3 都适用",
+        "correct": "consistent with the 2026-11-10 position census; not re-executed here",
+        "judgment": "除以 2 与独立持仓索引的结论一致。官方文档没有给出求和公式，本轮没有重放全市场持仓。"
+      },
+      "calculation": {
+        "sampled_at": "2026-11-11T07:53:00Z",
+        "btc_openInterest_base": "40520.9496399999",
+        "btc_markPx": "73935.0",
+        "btc_usd_raw": "2995916411.63339260650",
+        "eth_openInterest_base": "776440.7473999964",
+        "sol_openInterest_base": "4712832.7199999997",
+        "asset_ctx_has_long_short_split": false
+      },
+      "evidence": [
+        "官方 Info 文档只列出 openInterest，资产上下文里没有 long/short 字段。公开节点仓库没有给出 abs(position) 的求和实现。",
+        "Hydromancer 于 2026-11-10 用 perpSnapshots 合计全部未平仓仓位。BTC 多头 20976.96 与空头 20976.96 之和为 41953.93，落在同一分钟官方 openInterest 区间 41952.56–41957.28 内。ETH 与 HYPE 同样是多头加空头等于官方字段。",
+        "该索引按仓位 size 正负分开加总，再与官方 openInterest 比较，属于同分钟的独立状态对账。本轮没有购买或重放该接口，也没有枚举账户。"
+      ],
+      "gaps": [
+        "要升到 confirmed，需要官方公式，或在同一高度自行合计一个市场的多头基础币并与 openInterest 比较。官方 API 不提供全市场持仓，枚举账户不在本轮范围内。"
+      ],
+      "dashboard_recommendation": "继续使用 provisional_factor=0.5。不要仅凭 CoinGecko 的 2 倍关系升级。"
+    },
+    {
+      "project": "Pacifica",
+      "official_fields": [
+        {
+          "name": "info/prices.open_interest",
+          "endpoint": "GET https://api.pacifica.fi/api/v1/info/prices",
+          "raw_unit": "base asset",
+          "documented_unit": "USD",
+          "usd": "open_interest * mark"
+        }
+      ],
+      "side": null,
+      "confirmed_factor": null,
+      "provisional_factor": 0.5,
+      "validation_status": "provisional",
+      "confidence": "B-",
+      "defillama": {
+        "file": "open-interest/pacifica-oi.ts",
+        "transform": "sum(open_interest * mark) / 2",
+        "unit_conversion_correct": true,
+        "halving_correct": null,
+        "judgment": "先乘 mark 把基础币换成美元是对的。是否再除以 2，本轮没有新的持仓公式。"
+      },
+      "calculation": {
+        "sampled_at": "2026-11-11T07:53:00Z",
+        "btc_open_interest": "509.01619",
+        "btc_mark": "73934",
+        "btc_usd": "37633602.99146",
+        "eth_open_interest": "14048.09",
+        "eth_usd": "29001953.48708861",
+        "sol_open_interest": "170510.84",
+        "sol_usd": "14149514.16505468",
+        "payload_has_long_short_split": false
+      },
+      "evidence": [
+        "官方 Get prices 文档把 open_interest 写成 The current open interest on this symbol (in USD)。",
+        "BTC 的原始值是 509.01619。它不可能是美元；乘 mark 73934 后为 3763 万美元。ETH、SOL 同样是基础币数量级。",
+        "响应里没有 long 或 short 持仓字段。"
+      ],
+      "gaps": [
+        "缺少官方计数公式或一个市场的多头基础币合计。最小补证是 Pacifica 给出 open_interest 的求和定义，或公开 long base 与该字段对照。"
+      ],
+      "dashboard_recommendation": "美元化必须乘 mark。provisional_factor 维持 0.5，不升级。文档中的 USD 标注记为与字段单位不一致。"
+    },
+    {
+      "project": "Extended",
+      "official_fields": [
+        {
+          "name": "marketStats.openInterest",
+          "endpoint": "GET https://api.starknet.extended.exchange/api/v1/info/markets",
+          "raw_unit": "collateral USD",
+          "companion_field": "marketStats.openInterestBase"
+        }
+      ],
+      "side": null,
+      "confirmed_factor": null,
+      "provisional_factor": 0.5,
+      "validation_status": "provisional",
+      "confidence": "B-",
+      "defillama": {
+        "file": "dexs/extended/index.ts",
+        "transform": "sum(marketStats.openInterest) / 2",
+        "chain_note": "2026-10-22 之后 Starknet 适配器 deadFrom，Arc 适配器读取同一 URL。采样日只有 Arc 路径会计入。",
+        "correct": null,
+        "judgment": "USD 字段是基础币字段的美元化，比值约 1，不能用来证明单侧或双侧。订单簿与 RFQ 使用同一个 openInterest。除以 2 仍是暂定。"
+      },
+      "calculation": {
+        "sampled_at": "2026-11-11T08:05:00Z",
+        "btc": {
+          "name": "BTC-USD",
+          "isRfq": false,
+          "openInterest_usd": "30659985.892220",
+          "openInterestBase": "415.37122",
+          "markPrice": "73834.450656749992",
+          "usd_over_base_times_mark": "0.9997156725442718262143467141"
+        },
+        "active_orderbook_oi_usd": "112682679.876087",
+        "active_orderbook_markets_with_oi": 48,
+        "active_rfq_oi_usd": "17514715.761804",
+        "active_rfq_markets_with_oi": 254,
+        "delisted_orderbook_oi_usd": "7808.906042",
+        "prelisted_rfq_oi_usd": "1910.367433",
+        "reduce_only_oi_usd": "11.647300",
+        "spot_oi_usd": "0"
+      },
+      "evidence": [
+        "BTC-USD 的 openInterest / (openInterestBase × markPrice) = 0.9997。两个字段是同一数量的美元与基础币，不是两侧。",
+        "市场对象有 isRfq。活跃订单簿 48 个市场 OI 合计 1.127 亿美元；活跃 RFQ 291 个市场里 254 个有 OI，合计 1751 万美元。两边的 stats 键相同。",
+        "已下架、预上架和 reduce-only 的残余 OI 合计约 9731 美元，相对 1.30 亿美元可忽略。现货 OI 为 0。",
+        "Prime RWA 资金费公式里的 OI 是带符号的零售净敞口，与 marketStats.openInterest 这个正的总量不是同一个数。"
+      ],
+      "gaps": [
+        "官方 API 文档把 openInterest 定义为抵押品资产中的未平仓量，没有写明是否为多头加空头。",
+        "最小补证是一个订单簿市场和一个 RFQ 市场各自的用户多头名义金额，与 marketStats.openInterest 对照。"
+      ],
+      "dashboard_recommendation": "维持 provisional_factor=0.5。Arc 与 RFQ 不要使用另一套系数。下架市场残余可留在合计里。"
+    },
+    {
+      "project": "GRVT",
+      "official_fields": [
+        {
+          "name": "ticker.open_interest",
+          "endpoint": "POST https://market-data.grvt.io/full/v1/ticker",
+          "raw_unit": "base asset",
+          "documented_as": "The open interest in the instrument, expressed in base asset decimal units"
+        },
+        {
+          "name": "openview dailyOpenInterest",
+          "endpoint": "GET https://openview.grvt.io/api/v1/defillama/stats",
+          "raw_unit": "USD",
+          "aggregation": "platform, completed UTC day"
+        }
+      ],
+      "side": null,
+      "confirmed_factor": null,
+      "provisional_factor": 1.0,
+      "validation_status": "provisional",
+      "confidence": "B-",
+      "defillama": {
+        "file": "open-interest/grvt-perps-oi.ts",
+        "transform": "dailyOpenInterest，不除以 2",
+        "correct": null,
+        "judgment": "适配器直接使用官方日汇总。该汇总的多空拆分字段是空字符串，不能据此证明已经是单侧。"
+      },
+      "calculation": {
+        "completed_utc_day": "2026-11-10",
+        "window": ["2026-11-10T00:00:00Z", "2026-11-11T00:00:00Z"],
+        "dailyOpenInterest_usd": "381644023.17145",
+        "dailyLongOpenInterest": "",
+        "dailyShortOpenInterest": "",
+        "in_progress_utc_day_dailyOpenInterest": "0.00000",
+        "btc": {
+          "instrument": "BTC_USDT_Perp",
+          "open_interest_base": "2498.89332092",
+          "mark_price": "73927.034603313",
+          "usd": "184735773.00564057740420796",
+          "long_short_ratio_meaning": "账户数净多与净空之比，不是持仓名义金额"
+        }
+      },
+      "evidence": [
+        "官方 ticker 文档把 open_interest 标成基础币。BTC_USDT_Perp 为 2498.89332092，乘 mark 为 1.847 亿美元。",
+        "openview 在已结束的 2026-11-10 UTC 日返回 dailyOpenInterest 381644023.17145 美元。dailyLongOpenInterest 与 dailyShortOpenInterest 仍是空字符串。",
+        "进行中的 2026-11-11 UTC 日返回 dailyOpenInterest 0.00000。当前 OI 要读 ticker，不能读未结束的日桶。",
+        "long_short_ratio 的文档定义是净多账户数与净空账户数之比。"
+      ],
+      "gaps": [
+        "日接口预留了多空 OI，实际没有填充。没有公开的逐仓位合计。",
+        "最小补证是让 openview 填上 dailyLongOpenInterest，或给出一个市场的多头基础币与 ticker.open_interest 的对照。"
+      ],
+      "dashboard_recommendation": "维持 provisional_factor=1.0，不升级。当前值用 ticker 基础币×mark；日汇总只取已结束 UTC 日。"
+    },
+    {
+      "project": "Nado",
+      "official_fields": [
+        {
+          "name": "archive market_snapshots.open_interests",
+          "endpoint": "POST https://archive.prod.nado.xyz/v1",
+          "raw_unit": "USDT0 x18",
+          "aggregation": "product_id to quote notional"
+        },
+        {
+          "name": "archive v2 contracts.open_interest",
+          "endpoint": "GET https://archive.prod.nado.xyz/v2/contracts?edge=false",
+          "raw_unit": "base asset",
+          "official_split": "long_open_interest 与 short_open_interest 各等于 open_interest 的一半"
+        },
+        {
+          "name": "gateway perp state.open_interest",
+          "endpoint": "GET https://gateway.prod.nado.xyz/v1/query?type=all_products",
+          "raw_unit": "base asset x18",
+          "prior_round": "合约源码已确认双侧，本轮只核对映射"
+        }
+      ],
+      "side": "archive quote notional equals the documented two-sided contracts.open_interest_usd",
+      "confirmed_factor": 0.5,
+      "provisional_factor": null,
+      "validation_status": "confirmed",
+      "confidence": "A-",
+      "defillama": {
+        "file": "open-interest/nado.ts",
+        "transform": "sum(open_interests) / 1e18 / 2",
+        "product_filter": "请求不传 product_ids",
+        "correct": true,
+        "double_halving": false,
+        "spot_mixed_in": false,
+        "judgment": "Archive 的报价名义金额与 contracts.open_interest_usd 相同，而该字段的多头被官方定义并实测为总量的一半。DefiLlama 只除一次 2。未过滤的快照键与 83 个永续 id 完全一致，16 个现货 id 不在其中。"
+      },
+      "calculation": {
+        "paired_read": {
+          "archive_btc_product_2_usdt0": "22963383.650024998879418504",
+          "contracts_btc_open_interest_usd": "22963383.650025",
+          "archive_over_contracts_usd": "1.000000000000000",
+          "contracts_long_over_open_interest": "0.5",
+          "contracts_btc_open_interest_base": "310.6739",
+          "note": "同一次脚本先读 archive 再读 contracts，美元比值对齐到浮点误差。310.6739 是紧接着仍返回同一 open_interest_usd 的 contracts 基础币。"
+        },
+        "later_gateway_read": {
+          "state_open_interest_base": "307.7135",
+          "contracts_open_interest_base": "310.6739",
+          "gateway_over_contracts_base": "0.9905",
+          "note": "亚秒级的另一次读数。两侧数量级相同，差额约 1%，不是第二个 0.5。"
+        },
+        "snapshot": {
+          "lag_seconds": 1,
+          "products_in_open_interests": 83,
+          "zero_oi_products": 7,
+          "spot_ids_present": [],
+          "perp_ids_missing": [],
+          "sum_usdt0": "75378319.604504146494442880"
+        }
+      },
+      "evidence": [
+        "Nado Contracts 文档写明 long_open_interest 等于 open_interest 的一半，short_open_interest 同样等于一半。BTC、ETH、SOL 与全平台合计的实测比值都是 0.5。",
+        "Archive 文档把 open_interests 定义为 product_id 到 USDT0 单位的映射。BTC product 2 的 archive/1e18 与 contracts.open_interest_usd 比值为 1。",
+        "Gateway symbols 有 83 个 perp 与 16 个 spot。不带 product_ids 的快照键集合等于全部 perp id，现货 id 一个都没有。",
+        "快照时间戳与请求时刻相差 1 秒。granularity 取 3600 或 86400 时，count=1 都返回这份最新快照。",
+        "DefiLlama 用 parseInt 后除以 1e18。单个产品的 x18 整数远大于 2^53，但丢失的精度落在 1e18 以下的尾数，美元误差可忽略。"
+      ],
+      "gaps": [
+        "Gateway state.open_interest 与 contracts.open_interest 在另一次亚秒读数中相差约 1%。这不影响 Archive 对 contracts 美元字段的闭合，也不构成第二次折半。若要解释这 1%，在同一代码块里读取 state.open_interest、oracle 或 mark，以及 archive 的同一 product。"
+      ],
+      "dashboard_recommendation": "Archive 字段使用 confirmed_factor=0.5。按 gateway 的 perp product_id 过滤后再汇总，避免索引器以后把现货放进同一张图。USDT0 按 1 美元计，另设脱锚告警。"
+    }
+  ]
+}
