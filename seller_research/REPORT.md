@@ -1,5 +1,7 @@
 # 卖家层：谁在以大幅折价出售推理额度
 
+订阅额度与 API 刊例的价差见 `subscription_spread.md`（2026-11-26 晚间续篇）。那一篇从官方套餐算成本，不把订阅机制安到某一条匿名 offer 上。
+
 快照时间：北京时间 2026-11-26 19:45（Surplus 成交窗）与 19:46（InferHub `/api/market`）。汇率只在把百炼人民币刊例换成美元时使用，取当日 CFETS 中间价 6.7096 元/美元，不是阿里云账单上的美元。
 
 本地目录 `/Users/jiangxinrui/Documents/ChatGPT/Agent Economy/` 没有挂到这台机器上。本账号既往云端研究记录里也没有名为 V1–V8 的卖家报告。本轮没有重做平台级经营统计，结果只写在 `seller_research/`。
