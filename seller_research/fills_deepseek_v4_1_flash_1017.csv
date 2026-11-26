@@ -1,0 +1,21 @@
+created_at_cst,route_label,input_tokens,output_tokens,cost_micro,direct_cost_micro,surplus_reference_over_receipt,comparison,ask_card,offpeak_uncached_over_ask,busy_uncached_over_ask,offpeak_all_input_cached_over_ask,busy_all_input_cached_over_ask,uncached_list_over_ask,all_input_cached_over_ask
+2026-11-26T19:40:07+08:00,Alibaba DashScope — China,59393,212,262,5475,20.90,price cards; raw micro fields are not token x list,Surplus DashScope tier 0.0478 = $0.007177/$0.033495,20.72,41.44,0.70,1.40,,
+2026-11-26T19:40:07+08:00,Mistral AI direct,98956,171,48,690,14.38,price cards; raw micro fields are not token x list,Surplus Mistral tier 0.070 = $0.0105/$0.049,,,,,28.54,0.86
+2026-11-26T19:40:07+08:00,Alibaba DashScope — China,3048,1500,54,1117,20.69,price cards; raw micro fields are not token x list,Surplus DashScope tier 0.0478 = $0.007177/$0.033495,18.70,37.40,12.53,25.05,,
+2026-11-26T19:40:07+08:00,Alibaba DashScope — China,2399,60,19,402,21.16,price cards; raw micro fields are not token x list,Surplus DashScope tier 0.0478 = $0.007177/$0.033495,20.46,40.91,2.23,4.46,,
+2026-11-26T19:40:07+08:00,Alibaba DashScope — China,66862,3480,153,3204,20.94,price cards; raw micro fields are not token x list,Surplus DashScope tier 0.0478 = $0.007177/$0.033495,20.19,40.37,3.81,7.63,,
+2026-11-26T19:40:07+08:00,Kenari Cloud,52497,3205,470,9506,20.23,price cards; raw micro fields are not token x list,,,,,,,
+2026-11-26T19:40:07+08:00,Mistral AI direct,20160,97,14,197,14.07,price cards; raw micro fields are not token x list,Surplus Mistral tier 0.070 = $0.0105/$0.049,,,,,28.48,1.19
+2026-11-26T19:40:07+08:00,Alibaba DashScope — China,58930,396,48,1025,21.35,price cards; raw micro fields are not token x list,Surplus DashScope tier 0.0478 = $0.007177/$0.033495,20.68,41.35,0.94,1.89,,
+2026-11-26T19:40:07+08:00,Kenari Cloud,86984,247,36,730,20.28,price cards; raw micro fields are not token x list,,,,,,,
+2026-11-26T19:40:07+08:00,Mistral AI direct,18370,57,94,1348,14.34,price cards; raw micro fields are not token x list,Surplus Mistral tier 0.070 = $0.0105/$0.049,,,,,28.51,1.01
+2026-11-26T19:40:07+08:00,Alibaba DashScope — China,310114,1181,130,2707,20.82,price cards; raw micro fields are not token x list,Surplus DashScope tier 0.0478 = $0.007177/$0.033495,20.71,41.43,0.72,1.44,,
+2026-11-26T19:40:07+08:00,Alibaba DashScope — China,17588,255,26,534,20.54,price cards; raw micro fields are not token x list,Surplus DashScope tier 0.0478 = $0.007177/$0.033495,20.58,41.16,1.52,3.03,,
+2026-11-26T19:40:07+08:00,Alibaba DashScope — China,2900,375,17,345,20.29,price cards; raw micro fields are not token x list,Surplus DashScope tier 0.0478 = $0.007177/$0.033495,19.65,39.30,6.96,13.92,,
+2026-11-26T19:40:07+08:00,Alibaba DashScope — China,20209,958,79,1660,21.01,price cards; raw micro fields are not token x list,Surplus DashScope tier 0.0478 = $0.007177/$0.033495,20.23,40.46,3.56,7.13,,
+2026-11-26T19:40:07+08:00,Alibaba DashScope — China,21695,328,25,514,20.56,price cards; raw micro fields are not token x list,Surplus DashScope tier 0.0478 = $0.007177/$0.033495,20.57,41.14,1.56,3.12,,
+2026-11-26T19:40:07+08:00,Alibaba DashScope — China,59596,121,46,969,21.07,price cards; raw micro fields are not token x list,Surplus DashScope tier 0.0478 = $0.007177/$0.033495,20.74,41.48,0.58,1.16,,
+2026-11-26T19:40:07+08:00,Kenari Cloud,198435,88,54,1077,19.94,price cards; raw micro fields are not token x list,,,,,,,
+2026-11-26T19:40:07+08:00,Alibaba DashScope — China,113992,73,41,873,21.29,price cards; raw micro fields are not token x list,Surplus DashScope tier 0.0478 = $0.007177/$0.033495,20.76,41.52,0.47,0.93,,
+2026-11-26T19:40:07+08:00,Alibaba DashScope — China,58414,1030,52,1094,21.04,price cards; raw micro fields are not token x list,Surplus DashScope tier 0.0478 = $0.007177/$0.033495,20.54,41.08,1.74,3.47,,
+2026-11-26T19:40:07+08:00,Alibaba DashScope — China,118950,815,63,1319,20.94,price cards; raw micro fields are not token x list,Surplus DashScope tier 0.0478 = $0.007177/$0.033495,20.67,41.35,0.95,1.91,,

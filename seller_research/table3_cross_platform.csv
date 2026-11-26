@@ -1,0 +1,18 @@
+model,channel,venue,input_usd_per_m,output_usd_per_m,versus_official,same_seller,snapshot_cst
+claude-opus-5.5,Anthropic official as printed by InferHub,InferHub pricing page,4,20,reference,no this is the reference,2026-11-26 19:46
+claude-opus-5.5,Claude Code family cc floor,InferHub GET /api/market,0.108,0.54,97.3% under official; 1 slot,no publisher id,2026-11-26 19:46
+claude-opus-5.5,Claude Code family cc ceiling,InferHub GET /api/market,2,10,50% cap,no,2026-11-26 19:46
+claude-opus-5.5,InferHub channel cheapest healthy offer,Surplus order book,0.252399,1.261995,93.69% under Surplus direct $4/$20,no 11 distinct sellers on this channel,2026-11-26 19:45
+claude-opus-5.5,Anthropic channel on Surplus,Surplus order book,1.00,5.00,75% under Surplus direct,channel not a seller,2026-11-26 19:45
+claude-opus-5.5,Venice channel on Surplus,Surplus order book,1.965416,9.827080,50.86% under Surplus direct,20 distinct sellers on the roster row,2026-11-26 19:45
+deepseek-v4.1-flash-1017,Mistral public list,docs.mistral.ai,0.30,1.20,Mistral's own resale price; cache input $0.007,provider price not a Surplus seller,page read 2026-11-26
+deepseek-v4.1-flash-1017,OpenRouter reference used by every Surplus offer,Surplus direct_price,0.15,0.70,the discount denominator,reference,2026-11-26 19:45
+deepseek-v4.1-flash-1017,Mistral channel healthy floor multiplier 0.070,Surplus,0.0105,0.049,93% under the OpenRouter reference; 28.6x under Mistral input list,10 distinct sellers in the channel,2026-11-26 19:45
+deepseek-v4.1-flash-1017,Mistral channel tier 0.0400 currently unhealthy,Surplus,0.0060,0.028,output leg is 42.86x Mistral's $1.20 list; 3153 trades in 24h,offer ids only,2026-11-26 19:45
+deepseek-v4.1-flash-1017,InferHub auto-routed floor on the pricing page,InferHub,0.0174,0.0696,page prints 88.4% off and 5 available,not the same quote as Surplus,2026-11-26 page fetch
+deepseek-v4.1-flash-1017,InferHub family mv Mistral Vibe,InferHub GET /api/market,0.0051,0.0204,below both the Surplus Mistral floor and the Surplus InferHub floor,family not a seller,2026-11-26 19:46
+deepseek-v4.1-flash-1017,InferHub channel on Surplus,Surplus,0.007177,0.033494,95.22% under the OpenRouter reference,10 distinct on the roster row,2026-11-26 19:45
+deepseek-v4.1-flash-1017,DashScope China healthy floor,Surplus,0.007177,0.033495,multiplier 0.0478; 3080027 trades,4 distinct sellers,2026-11-26 19:45
+deepseek-v4.1-flash-1017,Bailian Beijing off-peak uncached,help.aliyun.com,0.14904,0.59615,CNY 1 and 4 divided by CFETS 6.7096,provider list,page read 2026-11-26
+deepseek-v4.1-flash-1017,Bailian Beijing off-peak cache-hit input,help.aliyun.com,0.00298,,CNY 0.02 / 6.7096; this input price is below the Surplus DashScope ask of 0.007177,provider list,page read 2026-11-26
+deepseek-v4.1-flash-1017,Alibaba Token Plan on InferHub,InferHub alitp slug,0.045,0.18,page also prints an official 0.15 / 0.60 for that family,family not a seller,2026-11-26 19:46
